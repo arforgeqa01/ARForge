@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1058147011054-7ci0o7atv7fbhn19npv2m8htkle3t8h0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1058147011054-7ci0o7atv7fbhn19npv2m8htkle3t8h0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCpaBbxRyTSiOLL3fEPqpFgVA3vTww1v4U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1058147011054</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.arforge.app.ARForge</string>
+	<key>PROJECT_ID</key>
+	<string>doc-6d1fc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>doc-6d1fc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1058147011054:ios:895058eeb479883884a6ff</string>
+	<key>DATABASE_URL</key>
+	<string>https://doc-6d1fc-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

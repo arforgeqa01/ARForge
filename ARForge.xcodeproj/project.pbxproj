@@ -1,0 +1,866 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A2E64F126DFEC4E004F368E /* DeviceImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E64F026DFEC4E004F368E /* DeviceImageFetcher.swift */; };
+		0A2E64F526DFECDB004F368E /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E64F426DFECDB004F368E /* LoadingIndicator.swift */; };
+		0A2E64F726DFED07004F368E /* ImagePickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E64F626DFED07004F368E /* ImagePickerCard.swift */; };
+		0A2E64F926DFED47004F368E /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E64F826DFED47004F368E /* CustomImagePicker.swift */; };
+		0A2E64FB26E011CC004F368E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E64FA26E011CC004F368E /* Launch Screen.storyboard */; };
+		0A2E64FE26E0136F004F368E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2E64FD26E0136F004F368E /* FirebaseAnalytics */; };
+		0A2E650026E0136F004F368E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2E64FF26E0136F004F368E /* FirebaseCrashlytics */; };
+		0A2E650226E0136F004F368E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2E650126E0136F004F368E /* FirebaseAuth */; };
+		0A2E650426E0136F004F368E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2E650326E0136F004F368E /* FirebaseFirestore */; };
+		0A2E650726E01D5C004F368E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2E650626E01D5C004F368E /* GoogleSignIn */; };
+		0A2E650926E01E17004F368E /* GoogleService-Info_ARForge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E650826E01E16004F368E /* GoogleService-Info_ARForge.plist */; };
+		0A2E651126E04960004F368E /* FirebaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E651026E04960004F368E /* FirebaseState.swift */; };
+		0A2E651426E087F9004F368E /* GoogleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E651326E087F9004F368E /* GoogleLoginManager.swift */; };
+		0A2E651626E08AB3004F368E /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E651526E08AB3004F368E /* OnboardingState.swift */; };
+		0A2E651826E0963F004F368E /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E651726E0963F004F368E /* LaunchScreen.swift */; };
+		0A2E651C26E136BE004F368E /* UserModelsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E651B26E136BE004F368E /* UserModelsState.swift */; };
+		0A2E651E26E172B3004F368E /* GetUserObjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E651D26E172B2004F368E /* GetUserObjectUseCase.swift */; };
+		0A2E652126E17414004F368E /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E652026E17414004F368E /* NetworkHelper.swift */; };
+		0A2E652426E18015004F368E /* CreateModelJobUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E652326E18015004F368E /* CreateModelJobUseCase.swift */; };
+		0A2E652626E18276004F368E /* CreateJobState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E652526E18276004F368E /* CreateJobState.swift */; };
+		0A3AA70026DC035900E67DC5 /* ModelsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA6FF26DC035900E67DC5 /* ModelsScreen.swift */; };
+		0A3AA70226DC038000E67DC5 /* StaggeredGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA70126DC038000E67DC5 /* StaggeredGrid.swift */; };
+		0A3AA70526DC37BD00E67DC5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0A3AA70426DC37BD00E67DC5 /* SDWebImageSwiftUI */; };
+		0A3AA70726DC388C00E67DC5 /* ModelJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA70626DC388C00E67DC5 /* ModelJob.swift */; };
+		0A3AA70926DC4CB500E67DC5 /* ARQuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA70826DC4CB500E67DC5 /* ARQuickLookView.swift */; };
+		0A3AA71326DCB98A00E67DC5 /* WalkThroughScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA71226DCB98A00E67DC5 /* WalkThroughScreen.swift */; };
+		0A3AA71526DCB9BE00E67DC5 /* WalkThroughModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA71426DCB9BE00E67DC5 /* WalkThroughModel.swift */; };
+		0A3AA71726DD3C0900E67DC5 /* CreateModelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA71626DD3C0900E67DC5 /* CreateModelScreen.swift */; };
+		0A3AA71B26DDD3DE00E67DC5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA71A26DDD3DE00E67DC5 /* AppState.swift */; };
+		0A7A451E26E665FE0010D537 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7A451D26E665FE0010D537 /* StoreKit.framework */; };
+		0A7A452026E67EFB0010D537 /* BuyCoinsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7A451F26E67EFB0010D537 /* BuyCoinsScreen.swift */; };
+		0A7A452226E6A2820010D537 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7A452126E6A2820010D537 /* IAPManager.swift */; };
+		0A7A452426E6C15F0010D537 /* TestConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 0A7A452326E6C1540010D537 /* TestConfiguration.storekit */; };
+		0A860B3B26E28976006595A4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A860B3A26E28976006595A4 /* TestView.swift */; };
+		0AE65B5826DB550700456577 /* ARForgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B5726DB550700456577 /* ARForgeApp.swift */; };
+		0AE65B5A26DB550700456577 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B5926DB550700456577 /* LoginScreen.swift */; };
+		0AE65B5C26DB550900456577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE65B5B26DB550900456577 /* Assets.xcassets */; };
+		0AE65B5F26DB550900456577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE65B5E26DB550900456577 /* Preview Assets.xcassets */; };
+		0AE65B6A26DB550900456577 /* ARForgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B6926DB550900456577 /* ARForgeTests.swift */; };
+		0AE65B7526DB550900456577 /* ARForgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B7426DB550900456577 /* ARForgeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AE65B6626DB550900456577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AE65B4C26DB550700456577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AE65B5326DB550700456577;
+			remoteInfo = ARForge;
+		};
+		0AE65B7126DB550900456577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AE65B4C26DB550700456577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AE65B5326DB550700456577;
+			remoteInfo = ARForge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A2E64F026DFEC4E004F368E /* DeviceImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceImageFetcher.swift; sourceTree = "<group>"; };
+		0A2E64F426DFECDB004F368E /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		0A2E64F626DFED07004F368E /* ImagePickerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCard.swift; sourceTree = "<group>"; };
+		0A2E64F826DFED47004F368E /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
+		0A2E64FA26E011CC004F368E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0A2E650826E01E16004F368E /* GoogleService-Info_ARForge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_ARForge.plist"; sourceTree = "<group>"; };
+		0A2E651026E04960004F368E /* FirebaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseState.swift; sourceTree = "<group>"; };
+		0A2E651326E087F9004F368E /* GoogleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginManager.swift; sourceTree = "<group>"; };
+		0A2E651526E08AB3004F368E /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
+		0A2E651726E0963F004F368E /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		0A2E651926E0B035004F368E /* ARForge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ARForge.entitlements; sourceTree = "<group>"; };
+		0A2E651B26E136BE004F368E /* UserModelsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelsState.swift; sourceTree = "<group>"; };
+		0A2E651D26E172B2004F368E /* GetUserObjectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserObjectUseCase.swift; sourceTree = "<group>"; };
+		0A2E652026E17414004F368E /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		0A2E652326E18015004F368E /* CreateModelJobUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModelJobUseCase.swift; sourceTree = "<group>"; };
+		0A2E652526E18276004F368E /* CreateJobState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJobState.swift; sourceTree = "<group>"; };
+		0A3AA6FF26DC035900E67DC5 /* ModelsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsScreen.swift; sourceTree = "<group>"; };
+		0A3AA70126DC038000E67DC5 /* StaggeredGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaggeredGrid.swift; sourceTree = "<group>"; };
+		0A3AA70626DC388C00E67DC5 /* ModelJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelJob.swift; sourceTree = "<group>"; };
+		0A3AA70826DC4CB500E67DC5 /* ARQuickLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLookView.swift; sourceTree = "<group>"; };
+		0A3AA71226DCB98A00E67DC5 /* WalkThroughScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughScreen.swift; sourceTree = "<group>"; };
+		0A3AA71426DCB9BE00E67DC5 /* WalkThroughModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughModel.swift; sourceTree = "<group>"; };
+		0A3AA71626DD3C0900E67DC5 /* CreateModelScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModelScreen.swift; sourceTree = "<group>"; };
+		0A3AA71A26DDD3DE00E67DC5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		0A7A451D26E665FE0010D537 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0A7A451F26E67EFB0010D537 /* BuyCoinsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinsScreen.swift; sourceTree = "<group>"; };
+		0A7A452126E6A2820010D537 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		0A7A452326E6C1540010D537 /* TestConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestConfiguration.storekit; sourceTree = "<group>"; };
+		0A860B3A26E28976006595A4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		0AE65B5426DB550700456577 /* ARForge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARForge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AE65B5726DB550700456577 /* ARForgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARForgeApp.swift; sourceTree = "<group>"; };
+		0AE65B5926DB550700456577 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		0AE65B5B26DB550900456577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AE65B5E26DB550900456577 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0AE65B6026DB550900456577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AE65B6526DB550900456577 /* ARForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AE65B6926DB550900456577 /* ARForgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARForgeTests.swift; sourceTree = "<group>"; };
+		0AE65B6B26DB550900456577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AE65B7026DB550900456577 /* ARForgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARForgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AE65B7426DB550900456577 /* ARForgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARForgeUITests.swift; sourceTree = "<group>"; };
+		0AE65B7626DB550900456577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AE65B5126DB550700456577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2E650026E0136F004F368E /* FirebaseCrashlytics in Frameworks */,
+				0A7A451E26E665FE0010D537 /* StoreKit.framework in Frameworks */,
+				0A2E64FE26E0136F004F368E /* FirebaseAnalytics in Frameworks */,
+				0A3AA70526DC37BD00E67DC5 /* SDWebImageSwiftUI in Frameworks */,
+				0A2E650426E0136F004F368E /* FirebaseFirestore in Frameworks */,
+				0A2E650226E0136F004F368E /* FirebaseAuth in Frameworks */,
+				0A2E650726E01D5C004F368E /* GoogleSignIn in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE65B6226DB550900456577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE65B6D26DB550900456577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A2E64F226DFEC8D004F368E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E651326E087F9004F368E /* GoogleLoginManager.swift */,
+				0A7A452126E6A2820010D537 /* IAPManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		0A2E64F326DFECB3004F368E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0AE65B5926DB550700456577 /* LoginScreen.swift */,
+				0A2E651A26E1365C004F368E /* MainScreen */,
+				0A3AA71226DCB98A00E67DC5 /* WalkThroughScreen.swift */,
+				0A2E651726E0963F004F368E /* LaunchScreen.swift */,
+				0A7A451F26E67EFB0010D537 /* BuyCoinsScreen.swift */,
+				0A860B3A26E28976006595A4 /* TestView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0A2E651226E087BC004F368E /* States */ = {
+			isa = PBXGroup;
+			children = (
+				0A3AA71A26DDD3DE00E67DC5 /* AppState.swift */,
+				0A2E651026E04960004F368E /* FirebaseState.swift */,
+				0A2E651526E08AB3004F368E /* OnboardingState.swift */,
+				0A2E651B26E136BE004F368E /* UserModelsState.swift */,
+				0A2E652526E18276004F368E /* CreateJobState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		0A2E651A26E1365C004F368E /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0A3AA6FF26DC035900E67DC5 /* ModelsScreen.swift */,
+				0A3AA71626DD3C0900E67DC5 /* CreateModelScreen.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		0A2E651F26E17348004F368E /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E651D26E172B2004F368E /* GetUserObjectUseCase.swift */,
+				0A2E652326E18015004F368E /* CreateModelJobUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		0A2E652226E174E1004F368E /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E652026E17414004F368E /* NetworkHelper.swift */,
+				0A2E64F026DFEC4E004F368E /* DeviceImageFetcher.swift */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
+		0A3AA6FE26DC032700E67DC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A3AA70626DC388C00E67DC5 /* ModelJob.swift */,
+				0A3AA71426DCB9BE00E67DC5 /* WalkThroughModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A3AA70C26DC4DC100E67DC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0A7A451C26E665FE0010D537 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A7A451D26E665FE0010D537 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0AE65B4B26DB550700456577 = {
+			isa = PBXGroup;
+			children = (
+				0A2E64FA26E011CC004F368E /* Launch Screen.storyboard */,
+				0A2E650826E01E16004F368E /* GoogleService-Info_ARForge.plist */,
+				0AE65B5626DB550700456577 /* ARForge */,
+				0AE65B6826DB550900456577 /* ARForgeTests */,
+				0AE65B7326DB550900456577 /* ARForgeUITests */,
+				0AE65B5526DB550700456577 /* Products */,
+				0A7A451C26E665FE0010D537 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0AE65B5526DB550700456577 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AE65B5426DB550700456577 /* ARForge.app */,
+				0AE65B6526DB550900456577 /* ARForgeTests.xctest */,
+				0AE65B7026DB550900456577 /* ARForgeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AE65B5626DB550700456577 /* ARForge */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E651926E0B035004F368E /* ARForge.entitlements */,
+				0A7A452326E6C1540010D537 /* TestConfiguration.storekit */,
+				0AE65B5726DB550700456577 /* ARForgeApp.swift */,
+				0A2E652226E174E1004F368E /* Sync */,
+				0A2E651F26E17348004F368E /* UseCase */,
+				0A2E64F226DFEC8D004F368E /* Helper */,
+				0A3AA70C26DC4DC100E67DC5 /* Resources */,
+				0A2E651226E087BC004F368E /* States */,
+				0A3AA6FE26DC032700E67DC5 /* Models */,
+				0AE65B8226DBFFBD00456577 /* Views */,
+				0AE65B5B26DB550900456577 /* Assets.xcassets */,
+				0AE65B6026DB550900456577 /* Info.plist */,
+				0AE65B5D26DB550900456577 /* Preview Content */,
+			);
+			path = ARForge;
+			sourceTree = "<group>";
+		};
+		0AE65B5D26DB550900456577 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0AE65B5E26DB550900456577 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0AE65B6826DB550900456577 /* ARForgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0AE65B6926DB550900456577 /* ARForgeTests.swift */,
+				0AE65B6B26DB550900456577 /* Info.plist */,
+			);
+			path = ARForgeTests;
+			sourceTree = "<group>";
+		};
+		0AE65B7326DB550900456577 /* ARForgeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0AE65B7426DB550900456577 /* ARForgeUITests.swift */,
+				0AE65B7626DB550900456577 /* Info.plist */,
+			);
+			path = ARForgeUITests;
+			sourceTree = "<group>";
+		};
+		0AE65B8226DBFFBD00456577 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E64F326DFECB3004F368E /* Screens */,
+				0A3AA70126DC038000E67DC5 /* StaggeredGrid.swift */,
+				0A3AA70826DC4CB500E67DC5 /* ARQuickLookView.swift */,
+				0A2E64F426DFECDB004F368E /* LoadingIndicator.swift */,
+				0A2E64F626DFED07004F368E /* ImagePickerCard.swift */,
+				0A2E64F826DFED47004F368E /* CustomImagePicker.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AE65B5326DB550700456577 /* ARForge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AE65B7926DB550900456577 /* Build configuration list for PBXNativeTarget "ARForge" */;
+			buildPhases = (
+				0AE65B5026DB550700456577 /* Sources */,
+				0AE65B5126DB550700456577 /* Frameworks */,
+				0AE65B5226DB550700456577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARForge;
+			packageProductDependencies = (
+				0A3AA70426DC37BD00E67DC5 /* SDWebImageSwiftUI */,
+				0A2E64FD26E0136F004F368E /* FirebaseAnalytics */,
+				0A2E64FF26E0136F004F368E /* FirebaseCrashlytics */,
+				0A2E650126E0136F004F368E /* FirebaseAuth */,
+				0A2E650326E0136F004F368E /* FirebaseFirestore */,
+				0A2E650626E01D5C004F368E /* GoogleSignIn */,
+			);
+			productName = ARForge;
+			productReference = 0AE65B5426DB550700456577 /* ARForge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0AE65B6426DB550900456577 /* ARForgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AE65B7C26DB550900456577 /* Build configuration list for PBXNativeTarget "ARForgeTests" */;
+			buildPhases = (
+				0AE65B6126DB550900456577 /* Sources */,
+				0AE65B6226DB550900456577 /* Frameworks */,
+				0AE65B6326DB550900456577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AE65B6726DB550900456577 /* PBXTargetDependency */,
+			);
+			name = ARForgeTests;
+			productName = ARForgeTests;
+			productReference = 0AE65B6526DB550900456577 /* ARForgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0AE65B6F26DB550900456577 /* ARForgeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AE65B7F26DB550900456577 /* Build configuration list for PBXNativeTarget "ARForgeUITests" */;
+			buildPhases = (
+				0AE65B6C26DB550900456577 /* Sources */,
+				0AE65B6D26DB550900456577 /* Frameworks */,
+				0AE65B6E26DB550900456577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AE65B7226DB550900456577 /* PBXTargetDependency */,
+			);
+			name = ARForgeUITests;
+			productName = ARForgeUITests;
+			productReference = 0AE65B7026DB550900456577 /* ARForgeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AE65B4C26DB550700456577 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					0AE65B5326DB550700456577 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					0AE65B6426DB550900456577 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 0AE65B5326DB550700456577;
+					};
+					0AE65B6F26DB550900456577 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 0AE65B5326DB550700456577;
+					};
+				};
+			};
+			buildConfigurationList = 0AE65B4F26DB550700456577 /* Build configuration list for PBXProject "ARForge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0AE65B4B26DB550700456577;
+			packageReferences = (
+				0A3AA70326DC37BD00E67DC5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				0A2E64FC26E0136F004F368E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0A2E650526E01D5B004F368E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			productRefGroup = 0AE65B5526DB550700456577 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AE65B5326DB550700456577 /* ARForge */,
+				0AE65B6426DB550900456577 /* ARForgeTests */,
+				0AE65B6F26DB550900456577 /* ARForgeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AE65B5226DB550700456577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE65B5F26DB550900456577 /* Preview Assets.xcassets in Resources */,
+				0A7A452426E6C15F0010D537 /* TestConfiguration.storekit in Resources */,
+				0A2E650926E01E17004F368E /* GoogleService-Info_ARForge.plist in Resources */,
+				0AE65B5C26DB550900456577 /* Assets.xcassets in Resources */,
+				0A2E64FB26E011CC004F368E /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE65B6326DB550900456577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE65B6E26DB550900456577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AE65B5026DB550700456577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2E64F926DFED47004F368E /* CustomImagePicker.swift in Sources */,
+				0A2E64F526DFECDB004F368E /* LoadingIndicator.swift in Sources */,
+				0A2E651826E0963F004F368E /* LaunchScreen.swift in Sources */,
+				0AE65B5A26DB550700456577 /* LoginScreen.swift in Sources */,
+				0A3AA71B26DDD3DE00E67DC5 /* AppState.swift in Sources */,
+				0A2E651426E087F9004F368E /* GoogleLoginManager.swift in Sources */,
+				0A2E651126E04960004F368E /* FirebaseState.swift in Sources */,
+				0A2E652126E17414004F368E /* NetworkHelper.swift in Sources */,
+				0A3AA71326DCB98A00E67DC5 /* WalkThroughScreen.swift in Sources */,
+				0A2E64F126DFEC4E004F368E /* DeviceImageFetcher.swift in Sources */,
+				0A2E651626E08AB3004F368E /* OnboardingState.swift in Sources */,
+				0A3AA71526DCB9BE00E67DC5 /* WalkThroughModel.swift in Sources */,
+				0A860B3B26E28976006595A4 /* TestView.swift in Sources */,
+				0AE65B5826DB550700456577 /* ARForgeApp.swift in Sources */,
+				0A2E651E26E172B3004F368E /* GetUserObjectUseCase.swift in Sources */,
+				0A3AA71726DD3C0900E67DC5 /* CreateModelScreen.swift in Sources */,
+				0A3AA70026DC035900E67DC5 /* ModelsScreen.swift in Sources */,
+				0A7A452226E6A2820010D537 /* IAPManager.swift in Sources */,
+				0A3AA70726DC388C00E67DC5 /* ModelJob.swift in Sources */,
+				0A2E652426E18015004F368E /* CreateModelJobUseCase.swift in Sources */,
+				0A2E652626E18276004F368E /* CreateJobState.swift in Sources */,
+				0A2E651C26E136BE004F368E /* UserModelsState.swift in Sources */,
+				0A2E64F726DFED07004F368E /* ImagePickerCard.swift in Sources */,
+				0A7A452026E67EFB0010D537 /* BuyCoinsScreen.swift in Sources */,
+				0A3AA70926DC4CB500E67DC5 /* ARQuickLookView.swift in Sources */,
+				0A3AA70226DC038000E67DC5 /* StaggeredGrid.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE65B6126DB550900456577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE65B6A26DB550900456577 /* ARForgeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE65B6C26DB550900456577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE65B7526DB550900456577 /* ARForgeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0AE65B6726DB550900456577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AE65B5326DB550700456577 /* ARForge */;
+			targetProxy = 0AE65B6626DB550900456577 /* PBXContainerItemProxy */;
+		};
+		0AE65B7226DB550900456577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AE65B5326DB550700456577 /* ARForge */;
+			targetProxy = 0AE65B7126DB550900456577 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AE65B7726DB550900456577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0AE65B7826DB550900456577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AE65B7A26DB550900456577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ARForge/ARForge.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_ASSET_PATHS = "\"ARForge/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Y2ZAGRJ9M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ARForge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arforge.app.ARForge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ARForge_dev;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0AE65B7B26DB550900456577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ARForge/ARForge.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_ASSET_PATHS = "\"ARForge/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Y2ZAGRJ9M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ARForge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arforge.app.ARForge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ARForge_dev;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0AE65B7D26DB550900456577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ARForgeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arforge.app.ARForgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARForge.app/ARForge";
+			};
+			name = Debug;
+		};
+		0AE65B7E26DB550900456577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ARForgeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arforge.app.ARForgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARForge.app/ARForge";
+			};
+			name = Release;
+		};
+		0AE65B8026DB550900456577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ARForgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arforge.app.ARForgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARForge;
+			};
+			name = Debug;
+		};
+		0AE65B8126DB550900456577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ARForgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arforge.app.ARForgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARForge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AE65B4F26DB550700456577 /* Build configuration list for PBXProject "ARForge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE65B7726DB550900456577 /* Debug */,
+				0AE65B7826DB550900456577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AE65B7926DB550900456577 /* Build configuration list for PBXNativeTarget "ARForge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE65B7A26DB550900456577 /* Debug */,
+				0AE65B7B26DB550900456577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AE65B7C26DB550900456577 /* Build configuration list for PBXNativeTarget "ARForgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE65B7D26DB550900456577 /* Debug */,
+				0AE65B7E26DB550900456577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AE65B7F26DB550900456577 /* Build configuration list for PBXNativeTarget "ARForgeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE65B8026DB550900456577 /* Debug */,
+				0AE65B8126DB550900456577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A2E64FC26E0136F004F368E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.1;
+			};
+		};
+		0A2E650526E01D5B004F368E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.2;
+			};
+		};
+		0A3AA70326DC37BD00E67DC5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A2E64FD26E0136F004F368E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A2E64FC26E0136F004F368E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		0A2E64FF26E0136F004F368E /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A2E64FC26E0136F004F368E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		0A2E650126E0136F004F368E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A2E64FC26E0136F004F368E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0A2E650326E0136F004F368E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A2E64FC26E0136F004F368E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0A2E650626E01D5C004F368E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A2E650526E01D5B004F368E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		0A3AA70426DC37BD00E67DC5 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A3AA70326DC37BD00E67DC5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0AE65B4C26DB550700456577 /* Project object */;
+}

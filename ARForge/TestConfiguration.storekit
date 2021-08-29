@@ -1,0 +1,48 @@
+{
+  "identifier" : "7B64C4EC",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "862AD1F4",
+      "localizations" : [
+        {
+          "description" : "Buy 10 AR Coins for making AR Assets",
+          "displayName" : "10 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.arforge.app.ARForge.coins.10",
+      "referenceName" : "10 AR Conversion Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "8.99",
+      "familyShareable" : false,
+      "internalID" : "03E75775",
+      "localizations" : [
+        {
+          "description" : "Buy 100 AR Coins for making AR Assets",
+          "displayName" : "100 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.arforge.app.ARForge.coins.100",
+      "referenceName" : "100 AR Conversion Coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}
