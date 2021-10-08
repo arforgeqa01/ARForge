@@ -41,6 +41,8 @@
 		0A7A452226E6A2820010D537 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7A452126E6A2820010D537 /* IAPManager.swift */; };
 		0A7A452426E6C15F0010D537 /* TestConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 0A7A452326E6C1540010D537 /* TestConfiguration.storekit */; };
 		0A860B3B26E28976006595A4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A860B3A26E28976006595A4 /* TestView.swift */; };
+		0AA99C22270A178900BD4C76 /* IAPState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA99C21270A178900BD4C76 /* IAPState.swift */; };
+		0AA99C24270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA99C23270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift */; };
 		0AE65B5826DB550700456577 /* ARForgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B5726DB550700456577 /* ARForgeApp.swift */; };
 		0AE65B5A26DB550700456577 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B5926DB550700456577 /* LoginScreen.swift */; };
 		0AE65B5C26DB550900456577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE65B5B26DB550900456577 /* Assets.xcassets */; };
@@ -96,6 +98,8 @@
 		0A7A452126E6A2820010D537 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		0A7A452326E6C1540010D537 /* TestConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestConfiguration.storekit; sourceTree = "<group>"; };
 		0A860B3A26E28976006595A4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		0AA99C21270A178900BD4C76 /* IAPState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPState.swift; sourceTree = "<group>"; };
+		0AA99C23270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositIAPReceiptUseCase.swift; sourceTree = "<group>"; };
 		0AE65B5426DB550700456577 /* ARForge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARForge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE65B5726DB550700456577 /* ARForgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARForgeApp.swift; sourceTree = "<group>"; };
 		0AE65B5926DB550700456577 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				0A2E651026E04960004F368E /* FirebaseState.swift */,
 				0A2E651526E08AB3004F368E /* OnboardingState.swift */,
 				0A2E651B26E136BE004F368E /* UserModelsState.swift */,
+				0AA99C21270A178900BD4C76 /* IAPState.swift */,
 				0A2E652526E18276004F368E /* CreateJobState.swift */,
 			);
 			path = States;
@@ -189,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				0A2E651D26E172B2004F368E /* GetUserObjectUseCase.swift */,
+				0AA99C23270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift */,
 				0A2E652326E18015004F368E /* CreateModelJobUseCase.swift */,
 			);
 			path = UseCase;
@@ -461,6 +467,7 @@
 				0A3AA71B26DDD3DE00E67DC5 /* AppState.swift in Sources */,
 				0A2E651426E087F9004F368E /* GoogleLoginManager.swift in Sources */,
 				0A2E651126E04960004F368E /* FirebaseState.swift in Sources */,
+				0AA99C22270A178900BD4C76 /* IAPState.swift in Sources */,
 				0A2E652126E17414004F368E /* NetworkHelper.swift in Sources */,
 				0A3AA71326DCB98A00E67DC5 /* WalkThroughScreen.swift in Sources */,
 				0A2E64F126DFEC4E004F368E /* DeviceImageFetcher.swift in Sources */,
@@ -473,6 +480,7 @@
 				0A3AA70026DC035900E67DC5 /* ModelsScreen.swift in Sources */,
 				0A7A452226E6A2820010D537 /* IAPManager.swift in Sources */,
 				0A3AA70726DC388C00E67DC5 /* ModelJob.swift in Sources */,
+				0AA99C24270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift in Sources */,
 				0A2E652426E18015004F368E /* CreateModelJobUseCase.swift in Sources */,
 				0A2E652626E18276004F368E /* CreateJobState.swift in Sources */,
 				0A2E651C26E136BE004F368E /* UserModelsState.swift in Sources */,
