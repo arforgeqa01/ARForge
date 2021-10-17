@@ -37,6 +37,7 @@ enum FirebaseEndpoint {
     case createJobRequest(Data)
     case updateJobRequest(Data)
     case addCoinsWithAppleReceipt(Data)
+    case buyModelRequest(Data)
     
     func urlRequest(token:String?) -> URLRequest? {
         let baseUrl = "https://us-central1-doc-6d1fc.cloudfunctions.net/"
@@ -57,6 +58,11 @@ enum FirebaseEndpoint {
             finalUrlReq?.setValue("application/json", forHTTPHeaderField: "content-type")
         case .updateJobRequest(let jsonData):
             finalUrlReq = URLRequest(url: URL(string: baseUrl+"updateJobRequest")!)
+            finalUrlReq?.httpBody = jsonData
+            finalUrlReq?.httpMethod = "POST"
+            finalUrlReq?.setValue("application/json", forHTTPHeaderField: "content-type")
+        case .buyModelRequest(let jsonData):
+            finalUrlReq = URLRequest(url: URL(string: baseUrl+"buyModelRequest")!)
             finalUrlReq?.httpBody = jsonData
             finalUrlReq?.httpMethod = "POST"
             finalUrlReq?.setValue("application/json", forHTTPHeaderField: "content-type")

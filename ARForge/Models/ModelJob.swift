@@ -13,6 +13,7 @@ enum Status: String {
     case inProgress
     case failed
     case initial
+    case unknown
 }
 
 enum ModelType: String, CaseIterable {
@@ -37,6 +38,8 @@ struct ModelJob: Identifiable, Hashable, Decodable {
         case st
         case mt
         case ts
+        case status
+        case conversionType
     }
     
     init(from decoder:Decoder) throws {
@@ -45,10 +48,24 @@ struct ModelJob: Identifiable, Hashable, Decodable {
         lut = try values.decode(Double.self, forKey: .lut)
         ts = try values.decode(Double.self, forKey: .ts)
         id = try values.decode(String.self, forKey: .id)
-        let st = try values.decode(String.self, forKey: .st)
-        status = Status(rawValue: st)!
-        let mt = try values.decode(String.self, forKey: .mt)
-        modelType = ModelType(rawValue: mt)!
+        
+        status = Status.initial
+        if let st = try? values.decode(String.self, forKey: .st) {
+            status = Status(rawValue: st)!
+        }
+        if let status = try? values.decode(String.self, forKey: .status) {
+            self.status = Status(rawValue: status)!
+        }
+        
+        
+        modelType = ModelType.medium
+        if let mt = try? values.decode(String.self, forKey: .mt) {
+            modelType = ModelType(rawValue: mt)!
+        }
+        if let conversionType = try? values.decode(String.self, forKey: .conversionType) {
+            modelType = ModelType(rawValue: conversionType)!
+        }
+
     }
     
     
@@ -64,6 +81,9 @@ struct ModelJob: Identifiable, Hashable, Decodable {
         URL(string: "https://cdn.arforge.app/file/arforge/\(id).glb")!
     }
     
+    var modelThumbnail: URL {
+        URL(string: "https://cdn.arforge.app/file/arforge/\(id)_modelThumb.png")!
+    }
 }
 
 struct UserInfo: Decodable {
@@ -81,7 +101,7 @@ struct UserModel: Decodable {
 
     func getModels() -> [ModelJob] {
         var jobs = Array(docIDs.values)
-        jobs.sort { $1.ts > $0.ts }
+        jobs.sort { $1.ts < $0.ts }
         
         return jobs
     }

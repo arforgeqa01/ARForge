@@ -49,6 +49,7 @@
 		0AE65B5F26DB550900456577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE65B5E26DB550900456577 /* Preview Assets.xcassets */; };
 		0AE65B6A26DB550900456577 /* ARForgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B6926DB550900456577 /* ARForgeTests.swift */; };
 		0AE65B7526DB550900456577 /* ARForgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE65B7426DB550900456577 /* ARForgeUITests.swift */; };
+		0AF200B9271BD0B80034CAA4 /* BuyModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF200B8271BD0B80034CAA4 /* BuyModelUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		0AE65B7026DB550900456577 /* ARForgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARForgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE65B7426DB550900456577 /* ARForgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARForgeUITests.swift; sourceTree = "<group>"; };
 		0AE65B7626DB550900456577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AF200B8271BD0B80034CAA4 /* BuyModelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyModelUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			children = (
 				0A2E651D26E172B2004F368E /* GetUserObjectUseCase.swift */,
 				0AA99C23270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift */,
+				0AF200B8271BD0B80034CAA4 /* BuyModelUseCase.swift */,
 				0A2E652326E18015004F368E /* CreateModelJobUseCase.swift */,
 			);
 			path = UseCase;
@@ -473,6 +476,7 @@
 				0A2E64F126DFEC4E004F368E /* DeviceImageFetcher.swift in Sources */,
 				0A2E651626E08AB3004F368E /* OnboardingState.swift in Sources */,
 				0A3AA71526DCB9BE00E67DC5 /* WalkThroughModel.swift in Sources */,
+				0AF200B9271BD0B80034CAA4 /* BuyModelUseCase.swift in Sources */,
 				0A860B3B26E28976006595A4 /* TestView.swift in Sources */,
 				0AE65B5826DB550700456577 /* ARForgeApp.swift in Sources */,
 				0A2E651E26E172B3004F368E /* GetUserObjectUseCase.swift in Sources */,

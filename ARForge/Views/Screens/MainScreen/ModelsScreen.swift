@@ -179,7 +179,7 @@ struct ModelsList: View {
                 ,alignment: .top
             )
             .fullScreenCover(isPresented: $showingPreview) {
-                ModelCardDetail(model: $selectedModel, animation: animation, showing: $showingPreview)
+                ModelCardDetail(modelID: selectedModel?.id ?? "", animation: animation, showing: $showingPreview)
                 
             }
         }
@@ -214,15 +214,17 @@ struct ModelCardView: View{
 
 struct ModelCardDetail: View{
     
-    @Binding var model: ModelJob?
+    var modelID: String
     var animation: Namespace.ID
     @Binding var showing: Bool
     @Environment(\.openURL) var openURL
-    
+    @State var buyModelUseCase: UseCase?
+    @ObservedObject var userModelState = UserModelsState.shared
+        
     var body: some View{
         
         VStack {
-            if let model = model {
+            if let model = userModelState.model(from: modelID) {
                 
                 HStack(spacing: 25){
                     
@@ -241,7 +243,7 @@ struct ModelCardDetail: View{
                 .padding()
                 
                 Spacer()
-                WebImage(url: model.coverImageURL)
+                WebImage(url: model.modelThumbnail)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
@@ -260,7 +262,7 @@ struct ModelCardDetail: View{
                     }
                 } else {
                     Button("Buy for 10 coins") {
-                        print("Need to buy the model for 10 coins");
+                        self.buyModelUseCase = BuyModelUseCase.initializeAndStart(jobID: model.id)
                     }
                 }
                 

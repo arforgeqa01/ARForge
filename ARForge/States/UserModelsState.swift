@@ -23,6 +23,15 @@ class UserModelsState : ObservableObject {
     @Published var models: [ModelJob] = []
     @Published var currentState = UserModelsStateValue.unknown
     
+    func model(from jobID: String) -> ModelJob? {
+        for i in 0..<models.count {
+            if jobID == models[i].id {
+                return models[i]
+            }
+        }
+        return nil
+    }
+    
     var res : Result<UserModel, NetworkError> = .failure(.unknown) {
         didSet {
             print("res is \(res)")
@@ -35,6 +44,26 @@ class UserModelsState : ObservableObject {
             case .failure(let err):
                 self.currentState = .error(err.description)
                 self.models = [];
+            }
+        }
+    }
+    
+    var model : Result<ModelJob, NetworkError> = .failure(.unknown) {
+        didSet {
+            switch model {
+            case .success(let modelJob):
+                var newModels : [ModelJob] = []
+                self.models.forEach { job in
+                    if job.id == modelJob.id {
+                        newModels.append(modelJob)
+                    } else {
+                        newModels.append(job)
+                    }
+                }
+                self.models = newModels
+                break
+            case .failure(let err):
+                break
             }
         }
     }
