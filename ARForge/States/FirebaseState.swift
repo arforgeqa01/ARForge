@@ -45,6 +45,15 @@ class FirebaseState {
                     self?.firebaseUser = $0
                 }
         }.store(in: &allCancellables)
+        
+        AppleLoginManager.shared.$firUser
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                if self?.firebaseUser != $0 {
+                    self?.firebaseUser = $0
+                }
+            }.store(in: &allCancellables)
     }
     
     func logout() {

@@ -27,6 +27,7 @@
 		0A2E652126E17414004F368E /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E652026E17414004F368E /* NetworkHelper.swift */; };
 		0A2E652426E18015004F368E /* CreateModelJobUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E652326E18015004F368E /* CreateModelJobUseCase.swift */; };
 		0A2E652626E18276004F368E /* CreateJobState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E652526E18276004F368E /* CreateJobState.swift */; };
+		0A2F7245271CAB75000D299B /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F7244271CAB75000D299B /* AppleLoginManager.swift */; };
 		0A3AA70026DC035900E67DC5 /* ModelsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA6FF26DC035900E67DC5 /* ModelsScreen.swift */; };
 		0A3AA70226DC038000E67DC5 /* StaggeredGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AA70126DC038000E67DC5 /* StaggeredGrid.swift */; };
 		0A3AA70526DC37BD00E67DC5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0A3AA70426DC37BD00E67DC5 /* SDWebImageSwiftUI */; };
@@ -86,6 +87,7 @@
 		0A2E652026E17414004F368E /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		0A2E652326E18015004F368E /* CreateModelJobUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModelJobUseCase.swift; sourceTree = "<group>"; };
 		0A2E652526E18276004F368E /* CreateJobState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJobState.swift; sourceTree = "<group>"; };
+		0A2F7244271CAB75000D299B /* AppleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginManager.swift; sourceTree = "<group>"; };
 		0A3AA6FF26DC035900E67DC5 /* ModelsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsScreen.swift; sourceTree = "<group>"; };
 		0A3AA70126DC038000E67DC5 /* StaggeredGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaggeredGrid.swift; sourceTree = "<group>"; };
 		0A3AA70626DC388C00E67DC5 /* ModelJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelJob.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				0A2E651326E087F9004F368E /* GoogleLoginManager.swift */,
+				0A2F7244271CAB75000D299B /* AppleLoginManager.swift */,
 				0A7A452126E6A2820010D537 /* IAPManager.swift */,
 			);
 			path = Helper;
@@ -489,6 +492,7 @@
 				0A2E652626E18276004F368E /* CreateJobState.swift in Sources */,
 				0A2E651C26E136BE004F368E /* UserModelsState.swift in Sources */,
 				0A2E64F726DFED07004F368E /* ImagePickerCard.swift in Sources */,
+				0A2F7245271CAB75000D299B /* AppleLoginManager.swift in Sources */,
 				0A7A452026E67EFB0010D537 /* BuyCoinsScreen.swift in Sources */,
 				0A3AA70926DC4CB500E67DC5 /* ARQuickLookView.swift in Sources */,
 				0A3AA70226DC038000E67DC5 /* StaggeredGrid.swift in Sources */,

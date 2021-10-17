@@ -73,6 +73,7 @@ struct LoginContentView : View {
                 
                 Button(action: {
                     //TODO hook up apple singin
+                    AppleLoginManager.shared.startSignInWithAppleFlowWith(hostViewController: (UIApplication.shared.windows.first?.rootViewController)!)
                 }) {
                     
                     Image("logoApple")
