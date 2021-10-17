@@ -88,14 +88,14 @@ struct ModelJob: Identifiable, Hashable, Decodable {
 
 struct UserInfo: Decodable {
     var coins: Int
-    var email: String
-    var name: String
+    var email: String?
+    var name: String?
 }
 
 struct UserModel: Decodable {
     var coins: Int
-    var email: String
-    var name: String
+    var email: String?
+    var name: String?
     
     var docIDs: [String: ModelJob]
 

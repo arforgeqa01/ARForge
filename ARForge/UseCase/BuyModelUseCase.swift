@@ -24,9 +24,6 @@ class BuyModelUseCase: UseCase {
         
         URLSession.shared.dataTaskPublisher(for: req)
             .map(\.data)
-            .handleEvents(receiveOutput: { data in
-                print("KEVIN DEBUG the response is \(String.init(data: data, encoding: .utf8)!)")
-            })
             .decode(type: ModelJob.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .map { Result<ModelJob, NetworkError>.success($0) }
