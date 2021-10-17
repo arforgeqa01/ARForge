@@ -13,31 +13,23 @@ class GetUserObjectUseCase: UseCase {
     var userModelState: UserModelsState
     var token: String?
     
-    struct OutputRes : Codable {
-        var docIDs: [String: String]
-        
-        func getModels() -> [ModelJob] {
-            return ModelJob.convertToModels(dict: self.docIDs)
-        }
-    }
-    
     var subscriptions = Set<AnyCancellable>()
     let endPoint: FirebaseEndpoint
     
     func start() {
         guard let req = endPoint.urlRequest(token: token) else {
-            userModelState.res = Result<[ModelJob], NetworkError>.failure(.unknown)
+            userModelState.res = Result<UserModel, NetworkError>.failure(.unknown)
             return
         }
         
         URLSession.shared.dataTaskPublisher(for: req)
             .map(\.data)
-            .decode(type: OutputRes.self, decoder: JSONDecoder())
+            .decode(type: UserModel.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .map {
-                return Result<[ModelJob], NetworkError>.success($0.getModels())
+                return Result<UserModel, NetworkError>.success($0)
             }
-            .replaceError(with: Result<[ModelJob], NetworkError>.failure(.unknown))
+            .replaceError(with: Result<UserModel, NetworkError>.failure(.unknown))
             .assign(to: \.res, on: userModelState)
             .store(in: &subscriptions)
     }

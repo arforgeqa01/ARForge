@@ -103,6 +103,7 @@ struct ModelsList: View {
     
     @State var startOffset = CGPoint.zero
     @State var offset = CGPoint.zero
+    @State var selectedModel : ModelJob? = nil
     @State var showingPreview = false
     @Binding var refreshing: Bool
     @State var rotating = false
@@ -115,6 +116,7 @@ struct ModelsList: View {
     @Namespace var animation
     
     var body: some View {
+        
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 if (refreshing) {
@@ -136,11 +138,11 @@ struct ModelsList: View {
                 StaggeredGrid(columns: columns, list: models, content: { model in
                     
                     // Model Card View...
-                    ModelCardView(model: model)
+                    ModelCardView(model: model, animation: animation)
                         .matchedGeometryEffect(id: model.id, in: animation)
                         .onTapGesture {
-                            openURL(model.usdzURL)
-                            //self.showingPreview.toggle()
+                            self.selectedModel = model
+                            self.showingPreview.toggle()
                         }
                 })
             }
@@ -177,17 +179,8 @@ struct ModelsList: View {
                 ,alignment: .top
             )
             .fullScreenCover(isPresented: $showingPreview) {
-                VStack {
-                        HStack {
-                            Button("Close") {
-                                self.showingPreview.toggle()
-                            }
-                            Spacer()
-                        }
-                        .padding()
-                        
-                        ARQuickLookView(name: "buddha")
-                    }
+                ModelCardDetail(model: $selectedModel, animation: animation, showing: $showingPreview)
+                
             }
         }
     }
@@ -199,15 +192,16 @@ struct ModelsList: View {
 struct ModelCardView: View{
     
     var model: ModelJob
+    var animation: Namespace.ID
     
     var body: some View{
         ZStack {
             LinearGradient(gradient: .init(colors: [Color("lightblue"), Color("lightPurple"), Color("darkPurple")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
-
             VStack {
                 WebImage(url: model.coverImageURL)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+
                 
                 Text(model.status.rawValue)
                     .padding()
@@ -215,5 +209,63 @@ struct ModelCardView: View{
         }
         .foregroundColor(Color.white)
         .cornerRadius(10)
+    }
+}
+
+struct ModelCardDetail: View{
+    
+    @Binding var model: ModelJob?
+    var animation: Namespace.ID
+    @Binding var showing: Bool
+    @Environment(\.openURL) var openURL
+    
+    var body: some View{
+        
+        VStack {
+            if let model = model {
+                
+                HStack(spacing: 25){
+                    
+                    Button(action: {
+                        // closing view...
+                        withAnimation(.spring()){showing.toggle()}
+                    }) {
+                        
+                        Image(systemName: "chevron.left")
+                            .font(.title)
+                            .foregroundColor(.black)
+                    }
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                Spacer()
+                WebImage(url: model.coverImageURL)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Text(model.status.rawValue)
+                    .padding()
+                
+                Spacer()
+                
+                if model.buy{
+                    Button("Show USDZ") {
+                        openURL(model.usdzURL)
+                    }
+                    
+                    Button("Open GLB") {
+                        openURL(model.glbURL)
+                    }
+                } else {
+                    Button("Buy for 10 coins") {
+                        print("Need to buy the model for 10 coins");
+                    }
+                }
+                
+                Spacer()
+            }
+        }
     }
 }

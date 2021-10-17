@@ -74,12 +74,12 @@ extension IAPManager: SKProductsRequestDelegate, SKPaymentTransactionObserver {
             case .purchased:
 //                 call the server with the receipt
                 if let receiptData = getReceipt() {
-                    let base64Str = receiptData.base64EncodedString()
-                    os_log("ARForgeQADebug got the data %s", type: .default, base64Str)
+                    IAPState.shared.buyState = .purchased(receiptData, transaction)
+                } else {
+                    SKPaymentQueue.default().finishTransaction(transaction)
                 }
                 os_log("ARForgeQADebug I am in Purchased")
 
-                SKPaymentQueue.default().finishTransaction(transaction)
                 break
             case .failed, .deferred:
                 
@@ -105,5 +105,9 @@ extension IAPManager: SKProductsRequestDelegate, SKPaymentTransactionObserver {
         }
         
         return receiptData
+    }
+    
+    func finishTransaction(transaction: SKPaymentTransaction) {
+        SKPaymentQueue.default().finishTransaction(transaction)
     }
 }

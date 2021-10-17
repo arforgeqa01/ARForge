@@ -19,16 +19,19 @@ enum UserModelsStateValue {
 class UserModelsState : ObservableObject {
     static let shared = UserModelsState()
     
+    @Published var userInfo: UserInfo?
     @Published var models: [ModelJob] = []
     @Published var currentState = UserModelsStateValue.unknown
     
-    var res : Result<[ModelJob], NetworkError> = .failure(.unknown) {
+    var res : Result<UserModel, NetworkError> = .failure(.unknown) {
         didSet {
             print("res is \(res)")
             switch res {
-            case .success(let models):
+            case .success(let userModel):
                 self.currentState = .success
-                self.models = models
+                self.models = userModel.getModels()
+                self.userInfo = userModel.getUserInfo()
+                
             case .failure(let err):
                 self.currentState = .error(err.description)
                 self.models = [];

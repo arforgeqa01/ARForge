@@ -12,13 +12,13 @@ struct CreateModelScreen : View {
     @State var selected : [Asset] = []
     @State var showAssetPicker = false
     @State var showUploading = false
-    @State var selectedConversionMode = "medium"
+    @State var selectedConversionMode = ModelType.medium
     @State var inputType = InputAssetType.video
     
     @State var modelJobUseCase: CreateModelJobUseCase? = nil
     @ObservedObject var jobState = CreateJobState()
     
-    let conversionModes = ["preview", "reduced", "medium", "full"]
+    let conversionModes = ModelType.allCases
 
     
     var body: some View{
@@ -65,7 +65,7 @@ struct CreateModelScreen : View {
                     
                     Picker(selection: $selectedConversionMode, label: Text("Conversion Mode")) {
                         ForEach(conversionModes, id: \.self) {
-                            Text($0)
+                            Text($0.rawValue)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -86,7 +86,7 @@ struct CreateModelScreen : View {
                 
                 Button(action: {
                     
-                    modelJobUseCase = CreateModelJobUseCase(jobState: jobState, assets: selected, conversionType: selectedConversionMode, inputType: inputType.rawValue)
+                    modelJobUseCase = CreateModelJobUseCase(jobState: jobState, assets: selected, conversionType: selectedConversionMode.rawValue, inputType: inputType.rawValue)
                     modelJobUseCase?.start()
                     
                     showUploading.toggle()

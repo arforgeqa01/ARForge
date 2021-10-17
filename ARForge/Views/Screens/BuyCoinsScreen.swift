@@ -9,19 +9,23 @@ import SwiftUI
 
 struct BuyCoinsScreen: View {
     @Binding var isShowing: Bool
+    @ObservedObject var iapState = IAPState.shared
+    @ObservedObject var user = UserModelsState.shared
+    
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
 
                 Text("You have")
-                Text("20 coins")
+                Text("\(user.userInfo?.coins ?? -1) coins")
                 
                 Spacer()
 
                 HStack{
                     Button("Buy 10 coins @ \n USD 0.99") {
                         IAPManager.shared.buy(productID: .coin10)
+                        iapState.buyState = .inProgress(IAPManager.ARForgeProduct.coin10.rawValue)
                     }
                     .padding()
                     .background(Color.blue)
@@ -32,6 +36,7 @@ struct BuyCoinsScreen: View {
                     Spacer()
                     Button("Buy 100 coins @ \n USD 8.99") {
                         IAPManager.shared.buy(productID: .coin100)
+                        iapState.buyState = .inProgress(IAPManager.ARForgeProduct.coin10.rawValue)
                     }
                     .padding()
                     .background(Color.blue)
