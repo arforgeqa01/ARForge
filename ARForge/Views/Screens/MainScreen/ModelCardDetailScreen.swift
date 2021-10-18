@@ -8,19 +8,52 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct ModelCardDetail: View{
+struct ModelCardDetailScreen: View {
+    var modelID: String
+    @Binding var showing: Bool
+    @Environment(\.openURL) var openURL
+    @ObservedObject var userModelState = UserModelsState.shared
+    @ObservedObject var modelCardDetailState = ModelCardDetailState.shared
+    
+    var body: some View {
+        ZStack {
+            ModelCardDetail(modelID: modelID, showing: $showing)
+            if modelCardDetailState.screenState != .initial {
+                ModelCardDetailLoadingView(screenState: $modelCardDetailState.screenState)
+            }
+        }
+    }
+}
+
+struct ModelCardDetailLoadingView: View {
+    
+    @Binding var screenState: ModelCardDetailScreenState
+    
+    var body: some View {
+        ZStack {
+            Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
+            VStack {
+                LoadingIndicator(color: .white).padding()
+                Text(screenState.loadingString)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .fontWeight(.bold)
+            }
+        }
+    }
+}
+
+struct ModelCardDetail: View {
     
     var modelID: String
-    var animation: Namespace.ID
     @Binding var showing: Bool
     @Environment(\.openURL) var openURL
     @State var buyModelUseCase: UseCase?
     @State var deleteModelUseCase: UseCase?
     @State var showBuyScreen: Bool = false
     @ObservedObject var userModelState = UserModelsState.shared
-        
+    
     var body: some View{
-        
         VStack {
             if let model = userModelState.model(from: modelID) {
                 
@@ -82,7 +115,7 @@ struct ModelCardDetail: View{
                     .padding()
                 }
                 
-                if !hasSufficientFunds && !model.buy {
+                if !hasSufficientFunds && !model.buy && model.status.isBuyable {
                     Button("Insufficient Coins !!! \n Please Buy coins") {
                         showBuyScreen.toggle()
                     }.padding()

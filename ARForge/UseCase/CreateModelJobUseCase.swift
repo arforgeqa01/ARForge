@@ -24,7 +24,9 @@ class CreateModelJobUseCase: UseCase {
                 return
             }
             
-            self.startPublishers(token: token)
+            DispatchQueue.main.async {
+                self.startPublishers(token: token)
+            }
         });
     }
     
@@ -58,7 +60,9 @@ class CreateModelJobUseCase: UseCase {
             .eraseToAnyPublisher()
         
         
-        let pub2 = pub1.tryMap { results -> String in
+        let pub2 = pub1
+            .receive(on: DispatchQueue.main)
+            .tryMap { results -> String in
             var passed = true
             results.forEach { res in
                 if case .failure(_) = res {

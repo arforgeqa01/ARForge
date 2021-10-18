@@ -12,16 +12,11 @@ import Combine
 class DeleteModelUseCase: UseCase {
     var token: String?
     var userModelState: UserModelsState
+    var modelCardDetailState: ModelCardDetailState
     var subscriptions = Set<AnyCancellable>()
     let endpoint: FirebaseEndpoint
     let jobID: String
     
-    
-    /*
-     {
-       "status": true
-     }
-     */
     struct DeleteJobResponse: Codable {
         var status: Bool
         var jobID: String?
@@ -33,19 +28,25 @@ class DeleteModelUseCase: UseCase {
             return
         }
         
+        modelCardDetailState.screenState = .deleting
+
         URLSession.shared.dataTaskPublisher(for: req)
             .map(\.data)
             .decode(type: DeleteJobResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .map { Result<DeleteJobResponse, NetworkError>.success(DeleteJobResponse(status: $0.status, jobID: self.jobID)) }
             .replaceError(with: Result<DeleteJobResponse, NetworkError>.failure(.unknown))
+            .handleEvents(receiveOutput: { _ in
+                self.modelCardDetailState.screenState = .initial
+            })
             .assign(to: \.deleteModel, on: userModelState)
             .store(in: &subscriptions)
     }
 
-    init(endpoint:FirebaseEndpoint, userModelState: UserModelsState, token: String?, jobID: String) {
+    init(endpoint:FirebaseEndpoint, userModelState: UserModelsState, modelCardDetailState: ModelCardDetailState, token: String?, jobID: String) {
         self.endpoint = endpoint
         self.userModelState = userModelState
+        self.modelCardDetailState = modelCardDetailState
         self.token = token
         self.jobID = jobID
     }
@@ -54,11 +55,13 @@ class DeleteModelUseCase: UseCase {
         
         let jsonData = try! JSONSerialization.data(withJSONObject: ["jobID": jobID], options: .prettyPrinted)
 
-        let newUseCase = DeleteModelUseCase(endpoint: .deleteJobRequest(jsonData), userModelState: .shared, token: nil, jobID: jobID)
+        let newUseCase = DeleteModelUseCase(endpoint: .deleteJobRequest(jsonData), userModelState: .shared, modelCardDetailState: .shared, token: nil, jobID: jobID)
         
         FirebaseState.shared.firebaseUser?.getIDToken(completion: { token, _ in
             newUseCase.token = token
-            newUseCase.start()
+            DispatchQueue.main.async {
+                newUseCase.start()
+            }
         })
         
         return newUseCase

@@ -11,6 +11,7 @@ import Combine
 class BuyModelUseCase: UseCase {
     var token: String?
     var userModelState: UserModelsState
+    var modelCardDetailState: ModelCardDetailState
     var subscriptions = Set<AnyCancellable>()
     let endpoint: FirebaseEndpoint
     let jobID: String
@@ -21,6 +22,7 @@ class BuyModelUseCase: UseCase {
             userModelState.res = Result<UserModel, NetworkError>.failure(.unknown)
             return
         }
+        modelCardDetailState.screenState = .buying
         
         URLSession.shared.dataTaskPublisher(for: req)
             .map(\.data)
@@ -28,13 +30,17 @@ class BuyModelUseCase: UseCase {
             .receive(on: DispatchQueue.main)
             .map { Result<ModelJob, NetworkError>.success($0) }
             .replaceError(with: Result<ModelJob, NetworkError>.failure(.unknown))
+            .handleEvents(receiveOutput: { _ in
+                self.modelCardDetailState.screenState = .initial
+            })
             .assign(to: \.model, on: userModelState)
             .store(in: &subscriptions)
     }
 
-    init(endpoint:FirebaseEndpoint, userModelState: UserModelsState, token: String?, jobID: String) {
+    init(endpoint:FirebaseEndpoint, userModelState: UserModelsState, modelCardDetailState: ModelCardDetailState, token: String?, jobID: String) {
         self.endpoint = endpoint
         self.userModelState = userModelState
+        self.modelCardDetailState = modelCardDetailState
         self.token = token
         self.jobID = jobID
     }
@@ -43,11 +49,14 @@ class BuyModelUseCase: UseCase {
         
         let jsonData = try! JSONSerialization.data(withJSONObject: ["jobID": jobID], options: .prettyPrinted)
 
-        let newUseCase = BuyModelUseCase(endpoint: .buyModelRequest(jsonData), userModelState: .shared, token: nil, jobID: jobID)
+        let newUseCase = BuyModelUseCase(endpoint: .buyModelRequest(jsonData), userModelState: .shared, modelCardDetailState: .shared, token: nil, jobID: jobID)
         
         FirebaseState.shared.firebaseUser?.getIDToken(completion: { token, _ in
             newUseCase.token = token
-            newUseCase.start()
+            
+            DispatchQueue.main.async {
+                newUseCase.start()
+            }
         })
         
         return newUseCase

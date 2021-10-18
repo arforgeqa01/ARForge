@@ -56,6 +56,7 @@ class UserModelsState : ObservableObject {
                 self.models.forEach { job in
                     if job.id == modelJob.id {
                         newModels.append(modelJob)
+                        self.userInfo?.coins -= modelJob.modelType.cost
                     } else {
                         newModels.append(job)
                     }

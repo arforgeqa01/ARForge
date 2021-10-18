@@ -179,7 +179,7 @@ struct ModelsList: View {
                 ,alignment: .top
             )
             .fullScreenCover(isPresented: $showingPreview) {
-                ModelCardDetail(modelID: selectedModel?.id ?? "", animation: animation, showing: $showingPreview)
+                ModelCardDetailScreen(modelID: selectedModel?.id ?? "", showing: $showingPreview)
                 
             }
         }
