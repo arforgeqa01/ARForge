@@ -14,6 +14,19 @@ enum Status: String {
     case failed
     case initial
     case unknown
+    
+    var isBuyable: Bool {
+        return self == .finished
+    }
+    
+    var isDeletable: Bool {
+        switch self {
+        case .finished, .failed:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 enum ModelType: String, CaseIterable {
@@ -21,6 +34,19 @@ enum ModelType: String, CaseIterable {
     case reduced
     case medium
     case full
+    
+    var cost: Int {
+        switch self {
+        case .preview:
+            return 4
+        case .reduced:
+            return 6
+        case .medium:
+            return 8
+        case .full:
+            return 10
+        }
+    }
 }
 
 struct ModelJob: Identifiable, Hashable, Decodable {
@@ -71,6 +97,7 @@ struct ModelJob: Identifiable, Hashable, Decodable {
     
     var coverImageURL: URL {
         URL(string: "https://cdn.arforge.app/file/arforge/\(id)_cover")!
+
     }
     
     var usdzURL: URL {
@@ -82,7 +109,10 @@ struct ModelJob: Identifiable, Hashable, Decodable {
     }
     
     var modelThumbnail: URL {
-        URL(string: "https://cdn.arforge.app/file/arforge/\(id)_modelThumb.png")!
+        if self.status == .finished {
+            return URL(string: "https://cdn.arforge.app/file/arforge/\(id)_modelThumb.png")!
+        }
+        return coverImageURL
     }
 }
 

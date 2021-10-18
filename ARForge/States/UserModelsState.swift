@@ -67,4 +67,24 @@ class UserModelsState : ObservableObject {
             }
         }
     }
+    
+    var deleteModel : Result<DeleteModelUseCase.DeleteJobResponse, NetworkError> = .failure(.unknown) {
+        didSet {
+            switch deleteModel {
+            case .success(let response):
+                var newModels : [ModelJob] = []
+                self.models.forEach { job in
+                    if job.id == response.jobID {
+                        // do nothing
+                    } else {
+                        newModels.append(job)
+                    }
+                }
+                self.models = newModels
+                break
+            case .failure(let err):
+                break
+            }
+        }
+    }
 }

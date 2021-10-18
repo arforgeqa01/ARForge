@@ -219,6 +219,7 @@ struct ModelCardDetail: View{
     @Binding var showing: Bool
     @Environment(\.openURL) var openURL
     @State var buyModelUseCase: UseCase?
+    @State var deleteModelUseCase: UseCase?
     @ObservedObject var userModelState = UserModelsState.shared
         
     var body: some View{
@@ -253,20 +254,62 @@ struct ModelCardDetail: View{
                 Spacer()
                 
                 if model.buy{
-                    Button("Show USDZ") {
-                        openURL(model.usdzURL)
-                    }
-                    
-                    Button("Open GLB") {
-                        openURL(model.glbURL)
-                    }
-                } else {
-                    Button("Buy for 10 coins") {
+                    HStack {
+                        Button("Show USDZ") {
+                            openURL(model.usdzURL)
+                        }.padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding()
+                        
+                        
+                        Button("Open GLB") {
+                            openURL(model.glbURL)
+                        }.padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                    }.padding()
+                }
+                
+                let hasSufficientFunds = model.modelType.cost <= userModelState.userInfo!.coins
+                
+                if !model.buy && model.status.isBuyable && hasSufficientFunds {
+                    Button("Buy for \(model.modelType.cost) coins") {
                         self.buyModelUseCase = BuyModelUseCase.initializeAndStart(jobID: model.id)
-                    }
+                    }.padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+                }
+                
+                if !hasSufficientFunds {
+                    Button("Insufficient Coins pleease Buy coins") {
+                        // Move to Buy Coins Screen
+                    }.padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+                }
+                
+                if model.status.isDeletable {
+                    Button("Delete") {
+                        self.deleteModelUseCase = DeleteModelUseCase.initializeAndStart(jobID: model.id)
+                    }.padding()
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
                 }
                 
                 Spacer()
+            } else {
+                Text("Model deleted").onAppear {
+                    showing.toggle()
+                }
             }
         }
     }

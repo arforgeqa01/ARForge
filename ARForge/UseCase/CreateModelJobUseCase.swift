@@ -88,6 +88,7 @@ class CreateModelJobUseCase: UseCase {
             return Result<CreateJobStateValue, NetworkError>.success(.success)
         }
         .replaceError(with: .failure(.unknown))
+        .receive(on: DispatchQueue.main)
         .assign(to: \.res, on: self.jobState)
         .store(in: &self.subscriptions)
     }
