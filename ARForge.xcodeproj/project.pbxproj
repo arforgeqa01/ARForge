@@ -42,6 +42,7 @@
 		0A7A452026E67EFB0010D537 /* BuyCoinsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7A451F26E67EFB0010D537 /* BuyCoinsScreen.swift */; };
 		0A7A452226E6A2820010D537 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7A452126E6A2820010D537 /* IAPManager.swift */; };
 		0A7A452426E6C15F0010D537 /* TestConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 0A7A452326E6C1540010D537 /* TestConfiguration.storekit */; };
+		0A838496271D2174006D882B /* ModelCardDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A838495271D2174006D882B /* ModelCardDetailScreen.swift */; };
 		0A860B3B26E28976006595A4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A860B3A26E28976006595A4 /* TestView.swift */; };
 		0AA99C22270A178900BD4C76 /* IAPState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA99C21270A178900BD4C76 /* IAPState.swift */; };
 		0AA99C24270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA99C23270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift */; };
@@ -102,6 +103,7 @@
 		0A7A451F26E67EFB0010D537 /* BuyCoinsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinsScreen.swift; sourceTree = "<group>"; };
 		0A7A452126E6A2820010D537 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		0A7A452326E6C1540010D537 /* TestConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestConfiguration.storekit; sourceTree = "<group>"; };
+		0A838495271D2174006D882B /* ModelCardDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCardDetailScreen.swift; sourceTree = "<group>"; };
 		0A860B3A26E28976006595A4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		0AA99C21270A178900BD4C76 /* IAPState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPState.swift; sourceTree = "<group>"; };
 		0AA99C23270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositIAPReceiptUseCase.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				0A3AA6FF26DC035900E67DC5 /* ModelsScreen.swift */,
+				0A838495271D2174006D882B /* ModelCardDetailScreen.swift */,
 				0A3AA71626DD3C0900E67DC5 /* CreateModelScreen.swift */,
 			);
 			path = MainScreen;
@@ -489,6 +492,7 @@
 				0A2E651E26E172B3004F368E /* GetUserObjectUseCase.swift in Sources */,
 				0A3AA71726DD3C0900E67DC5 /* CreateModelScreen.swift in Sources */,
 				0A3AA70026DC035900E67DC5 /* ModelsScreen.swift in Sources */,
+				0A838496271D2174006D882B /* ModelCardDetailScreen.swift in Sources */,
 				0A7A452226E6A2820010D537 /* IAPManager.swift in Sources */,
 				0A3AA70726DC388C00E67DC5 /* ModelJob.swift in Sources */,
 				0AA99C24270A1B1500BD4C76 /* DepositIAPReceiptUseCase.swift in Sources */,
